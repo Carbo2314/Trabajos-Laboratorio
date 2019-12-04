@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
-public class Mascota {
+public abstract class Mascota {
 
- private String nombre;
+ public String nombre;
  private String dueno;
- private String fecha_nacimiento;
- private ArrayList<String> fechas_visita;
+ private Fecha fecha_nacimiento;
+ public ArrayList<Fecha> fechas_visita;
  private String tipo;
 
- public Mascota (String nombrex, String duenox, String fecha_nacimientox){
+ public Mascota (String nombrex, String duenox, Fecha fecha_nacimientox){
 
      this.nombre = nombrex;
      this.dueno = duenox;
@@ -25,11 +25,11 @@ public class Mascota {
         return dueno;
     }
 
-    public String getFecha_nacimiento() {
+    public Fecha getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public ArrayList<String> getFechas_visita() {
+    public ArrayList<Fecha> getFechas_visita() {
         return fechas_visita;
     }
 
@@ -45,11 +45,11 @@ public class Mascota {
         this.dueno = dueno;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
+    public void setFecha_nacimiento(Fecha fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public void setFechas_visita(ArrayList<String> fechas_visita) {
+    public void setFechas_visita(ArrayList<Fecha> fechas_visita) {
         this.fechas_visita = fechas_visita;
     }
 
@@ -57,15 +57,52 @@ public class Mascota {
         this.tipo = tipo;
     }
 
-    boolean cumplio_visitas(){
+}
+class Fecha {
+    private int dia;
+    private int mes;
+    private int anio;
 
-        int cantidad;
-        if(tipo == "perro"){cantidad = 4;}
-        else if(tipo == "gato"){cantidad = 2;}
-        else(tipo == "tortuga"){cantidad = 1;}
+    public Fecha(int dia, int mes, int anio) {
+        this.dia = dia;
+        this.mes = mes;
+        this.anio = anio;
+    }
 
-        if(this.fechas_visita.size() >= cantidad){return true;}
-        else{return false;}
+    public int getDia() {
+        return dia;
+    }
+
+    public void setDia(int dia) {
+        this.dia = dia;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public void setMes(int mes) {
+        this.mes = mes;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    Fecha F1 = new Fecha(15,11,2019);
+    Fecha F2 = new Fecha(23,11,2019);
+    Fecha F3 = new Fecha(13,12,2019);
+    Fecha F4 = new Fecha(27,12,2019);
+
+
+    public void agregar_fechas() {
+
+
 
     }
+
 }

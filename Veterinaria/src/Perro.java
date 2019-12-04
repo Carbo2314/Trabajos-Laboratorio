@@ -1,13 +1,15 @@
+import java.util.ArrayList;
+
 public class Perro extends Mascota {
 
     private String raza;
-    private int cantidad;
+    public final int supuestacantidad = 4;
 
-    public Perro (String razax, String nombrex, String duenox, String fecha_naimientox){
+    public Perro (String razax, String nombrex, String duenox, Fecha fecha_nacimientox){
 
-        super(nombrex, duenox, fecha_naimientox);
-
+        super(nombrex, duenox, fecha_nacimientox);
         this.raza = razax;
+        fechas_visita = new ArrayList<>();
 
     }
 
@@ -15,15 +17,15 @@ public class Perro extends Mascota {
         return raza;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public int getSupuestacantidad() {
+        return supuestacantidad;
     }
 
     public void setRaza(String raza) {
         this.raza = raza;
+    }
+
+    public void agregarFechas(){
+
     }
 }
